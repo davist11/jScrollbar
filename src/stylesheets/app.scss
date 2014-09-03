@@ -9,33 +9,29 @@
 /* @group big container */
 
 	.site__content__wrapper {
-		bottom: 220px;
-		left: 50%;
-		margin: 0 0 0 -300px;
+		height: 500px;
+		margin: 0 auto;
 		overflow: hidden;
-		position: fixed;
-		top: 0;
+		position: relative;
 		width: 600px;
 	}
 
 	.site__content {
+		@extend %clearfix;
 		background-color: #222;
 		bottom: 0;
-		left: 0;
-		padding-right: 50px;
-		position: absolute;
-		top: 0;
-		width: 650px;
-	}
-
-	.dmp-scroll__container {
-		@extend %clearfix;
 		color: #999;
-		font-family: 'Open Sans', sans-serif;
-		font-weight: 300;
-		line-height: 1.6;
+		left: 0;
 		overflow-x: hidden;
 		overflow-y: scroll;
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		.scroll__bar--y & {
+			padding-right: 50px;
+			width: 650px;
+		}
 
 		a {
 			border-bottom-color: #666;
@@ -45,58 +41,6 @@
 
 	.inner {
 		padding: 30px 20px;
-	}
-
-/* @end */
-
-
-/* @group small container */
-
-	.horizontal-scroller {
-		@extend %clearfix;
-		background-color: #f9f9f9;
-		bottom: 0;
-		height: 200px;
-		left: 0;
-		overflow: hidden;
-		position: fixed;
-		right: 0;
-	}
-
-	.horizontal-scroller__inner {
-		@extend %clearfix;
-		font-size: 0;
-		height: 250px;
-		overflow-x: scroll;
-		overflow-y: hidden;
-		padding-bottom: 50px;
-		white-space: nowrap;
-
-		ul {
-			@extend %clearfix;
-			font-size: 0;
-			line-height: 0;
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			white-space: nowrap;
-		}
-
-		li {
-			display: inline-block;
-			position: relative;
-
-			&:before {
-				bottom: 0;
-				box-shadow: inset 0 0 24px rgba(#000, 0.8);
-				content: '';
-				display: block;
-				left: 0;
-				position: absolute;
-				right: 0;
-				top: 0;
-			}
-		}
 	}
 
 /* @end */

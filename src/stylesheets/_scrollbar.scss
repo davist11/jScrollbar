@@ -13,24 +13,17 @@
 
 /* @group track */
 
-	.dmp-scrolltrack {
+	.scroll__track {
 		border-radius: $scrollbar--width;
 		position: absolute;
 		@include transition(background 200ms);
 		z-index: 10;
 
-		.dmp-scrollbar--none & {
+		.scroll__bar--none & {
 			display: none;
 		}
 
-		.dmp-scrollbar--x & {
-			bottom: $scrollbar--position;
-			height: $scrollbar--width;
-			left: $scrollbar--position;
-			right: $scrollbar--position;
-		}
-
-		.dmp-scrollbar--y & {
+		.scroll__bar--y & {
 			bottom: $scrollbar--position;
 			right: $scrollbar--position;
 			top: $scrollbar--position;
@@ -43,14 +36,14 @@
 
 /* @group scrollbar */
 
-	.dmp-scrollbar {
+	.scroll__bar {
 		background-color: $scrollbar--color;
 		border-radius: $scrollbar--width;
 		@include opacity($scrollbar--opacity);
 		position: absolute;
 		@include transition(opacity 200ms 50ms);
 
-		&.dmp--hover {
+		&.scroll--hover {
 			@include opacity($scrollbar--opacity-hover);
 		}
 
@@ -59,14 +52,7 @@
 			display: block;
 			position: absolute;
 
-			.dmp-scrollbar--x & {
-				bottom: $scrollbar--hitarea;
-				left: 0;
-				right: 0;
-				top: $scrollbar--hitarea;
-			}
-
-			.dmp-scrollbar--y & {
+			.scroll__bar--y & {
 				bottom: 0;
 				left: $scrollbar--hitarea;
 				right: $scrollbar--hitarea;
@@ -74,15 +60,11 @@
 			}
 		}
 
-		.dmp-scrollbar--x & {
-			height: $scrollbar--width;
-		}
-
-		.dmp-scrollbar--y & {
+		.scroll__bar--y & {
 			width: $scrollbar--width;
 		}
 
-		.dmp--scrolling & {
+		.scroll--scrolling & {
 			@include opacity($scrollbar--opacity-hover);
 			cursor: pointer;
 		}
